@@ -1,5 +1,8 @@
 
 
+
+
+
 function ambilBeratPria($tinggi) {
 
      $this->db->select('berat')->from('pria')->where('tinggi',$tinggi);

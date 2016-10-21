@@ -1,0 +1,41 @@
+function ambilBeratPria($tinggi) {
+
+     $this->db->select('berat')->from('pria')->where('tinggi',$tinggi);
+
+     $query = $this->db->get();
+
+     return $query->result();
+
+}
+
+
+
+
+
+ <script>
+  $(document).ready(function(){
+   $('.delete').click(function(e)
+   {
+   var href= $(this).attr('href');
+   var btn = this;
+   e.preventDefault(); 
+    $.ajax({
+        type: "GET",
+        url: href,
+        success: function(response) {
+
+          if (response == "Success")
+          {
+          $(btn).closest('tr').fadeOut("slow"); 
+          }
+          else
+          {
+            alert("Error");
+          }
+
+        }
+      });
+   });
+   
+  
+  });
